@@ -71,12 +71,12 @@
     }
     
 }
-
-- (void)dealloc{
+- (void)removeFromSuperview{
+    [super removeFromSuperview];
     [self.animatedTimer invalidate];
     self.animatedTimer = nil;
-   
 }
+
 - (void)animation{
     __weak typeof(self) weakSelf = self;
     CGRect tempF = weakSelf.myFaceView.frame;
