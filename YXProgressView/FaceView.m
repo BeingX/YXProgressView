@@ -5,15 +5,17 @@
 //  Created by 尹啟星 on 16/4/26.
 //  Copyright © 2016年 yinqixing. All rights reserved.
 //
-void drawBgInContext(CGContextRef context,CGRect rect,UIColor *color){
-    CGContextAddRect(context,rect);
-    [color set];
-    CGContextDrawPath(context, kCGPathFillStroke);
-}
+
 #import "FaceView.h"
 
 @implementation FaceView
-
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
 - (void)drawRect:(CGRect)rect{
     CGFloat width = rect.size.width;
     CGFloat height = rect.size.height;

@@ -71,16 +71,16 @@
     }
     
 }
-
-- (void)dealloc{
+- (void)removeFromSuperview{
+    [super removeFromSuperview];
     [self.animatedTimer invalidate];
     self.animatedTimer = nil;
-   
 }
+
 - (void)animation{
-    CGRect tempF = self.myFaceView.frame;
-    tempF.origin.y = 2 * _myFaceViewInset - _myFaceViewInset * 0.5;
     __weak typeof(self) weakSelf = self;
+    CGRect tempF = weakSelf.myFaceView.frame;
+    tempF.origin.y = 2 * _myFaceViewInset - _myFaceViewInset * 0.5;
     [UIView animateWithDuration:weakSelf.timeInterval * 0.5 animations:^{
        
         weakSelf.myFaceView.frame = tempF;

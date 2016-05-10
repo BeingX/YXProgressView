@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FaceView : UIView
+/**
+ *  the color of mouth and eyes，default is white
+ */
 @property (nonatomic,strong) UIColor *faceColor;
-
 @end
